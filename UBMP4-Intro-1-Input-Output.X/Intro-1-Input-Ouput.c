@@ -74,28 +74,28 @@ int main(void)
  *    Do the LEDs keep flashing when SW2 is held? Look at the program and
  *    explain why this happens when SW2 is held.
  * 
- *    4 lights light up when pressed. When held 4 lights light up then 4 lights light up then 4 lights light up then...
+ *    		4 lights light up when pressed. When held 4 lights light up then 4 lights light up then 4 lights light up then...
  *
  * 2. Explain the difference between the statements: LED3 = 0; and LED3 = 1;
  * 
- *    LED3 = 0 is off and LED3 = 1 is on.
+ *    		LED3 = 0 is off and LED3 = 1 is on.
  *
  * 3. What voltage do you expect the microcontroller to output to LED D3 when
  *    the statement LED3 = 0; runs? What voltage do you expect the output to be
  *    when the statement LED3 = 1; runs?
  * 
- *    !
+ *    		When LED3 = 0 there is 0V. When LED3 = 1 there is 5V.
  *
  *    You can confirm the output voltage with a voltmeter if you have access
  *    to one. If you tried that, did the voltage match your prediction?
  * 
- *    !
+ *    		!
  *
  * 4. The statement 'if(SW2 == 0)' uses two equal signs, while the statement
  *    'LED3 = 1;' uses a single equal sign. What operation is performed by one
  *    equal sign? What operation is performed by two equal signs?
  *
- *    !
+ *    		if(SW2 == 0) is like "Is SW2 0?" and LED3 = 1 is like "LED3 is 1."
  *
  * 5. The following program code includes instructions that write to the PORTC
  *    output latches directly. Try it by copying and pasting this code below
@@ -113,7 +113,10 @@ int main(void)
  *    advantage and one disadvantage of controlling the LEDs using 'LATC' writes
  *    rather than through individual 'LEDn = x;' statements.
  * 
- *    !
+ *    		!
+ *
+ *    		An advantage of useing LATC is that you can use one line to light lights.
+ *    		A disadvantage of using LATC is that you may overwrite something you didn't mean to.
  *
  * 6. Next, compare the operation of 'if' and 'while' structures to simulate
  *    momentary buttons. Replace the code you added in 5, above, with this code:
