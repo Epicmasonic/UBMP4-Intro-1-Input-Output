@@ -56,9 +56,7 @@ int main(void)
         
        if(SW2 == 0)
         {
-            BEEPER = 1;
-            __delay_ms(100);
-            BEEPER = 0;
+            BEEPER = !BEEPER;
             __delay_ms(100);
         }
 
