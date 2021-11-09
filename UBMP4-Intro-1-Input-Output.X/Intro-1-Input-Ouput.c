@@ -53,10 +53,12 @@ int main(void)
         }
         
         // Add code for your Program Analysis and Programming Activities here:
-       
-       Bpm = 112
-	    
-       if(SW5 == 0)
+        
+        //Bpm = 112;
+
+        //function here (What's the syntax for them?)
+
+        if(SW5 == 0)
         {
             BEEPER = !BEEPER;
             __delay_us(758);
