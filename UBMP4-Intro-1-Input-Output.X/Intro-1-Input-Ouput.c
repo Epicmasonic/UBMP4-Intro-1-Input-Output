@@ -54,7 +54,7 @@ int main(void)
         
         // Add code for your Program Analysis and Programming Activities here:
         
-       if(SW2 == 0)
+       if(SW5 == 0)
         {
             BEEPER = !BEEPER;
             __delay_ms(100);
