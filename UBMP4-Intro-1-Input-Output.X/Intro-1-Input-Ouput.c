@@ -53,11 +53,13 @@ int main(void)
         }
         
         // Add code for your Program Analysis and Programming Activities here:
-        
+       
+       Bpm = 112
+	    
        if(SW5 == 0)
         {
             BEEPER = !BEEPER;
-            __delay_ms(100);
+            __delay_us(758);
         }
 
         // Activate bootloader if SW1 is pressed.
