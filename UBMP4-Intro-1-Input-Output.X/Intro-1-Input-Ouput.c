@@ -23,8 +23,8 @@
 // The main function is required, and the program begins executing from here.
 
     // FUNCTION abomanation starts here
-        void NoteC4(char Length) { // Length is measured in 1/4 notes
-            unsigned int Loops = (3.822/536)*Length*4 // Not exact but close enough // Need to rework the math to avoid decimals
+        void NoteC4(char Length) { // Length is measured in 16th notes
+            unsigned int Loops = ((3822/536000)*(Length*4000))/1000 // Not exact but close enough // Need to rework the math to avoid decimals
             //round down Loops
             for(Loops > 0; Loops--) {
                 BEEPER = !BEEPER;
@@ -101,12 +101,12 @@ int main(void)
         // MUSIC starts here
         if(SW5 == 0)
         {
-        NoteC4(0.25);
-	    NoteD4(0.25);
-	    NoteE4(0.5);
-        NoteG4(0.5);
-        NoteF4(0.25);
-        NoteD4(0.25);
+        NoteC4(1);
+	    NoteD4(1);
+	    NoteE4(2);
+        NoteG4(2);
+        NoteF4(1);
+        NoteD4(1);
         }
 
         // Activate bootloader if SW1 is pressed.
