@@ -55,40 +55,50 @@ int main(void)
         // Add code for your Program Analysis and Programming Activities here:
         
         // FUNCTION abomanation starts here
-        int NoteC4(char Length) { // Length is measured in 1/4 notes
+        void NoteC4(char Length) { // Length is measured in 1/4 notes
             for((3.405/536)*Length) { // Not exact but close enough
                 BEEPER = !BEEPER;
                 __delay_us(3822);
             }
         }
 
-        int NoteD4(char Length) {
+        void NoteD4(char Length) {
             for((3.405/536)*Length) {
                 BEEPER = !BEEPER;
                 __delay_us(3405);
             }
         }
 
-        int NoteE4(char Length) {
+        void NoteE4(char Length) {
             for((3.033/536)*Length) {
                 BEEPER = !BEEPER;
                 __delay_us(3033);
             }
         }
 
-	int NoteF4(char Length) {
+    	void NoteF4(char Length) {
             for((2.863/536)*Length) {
                 BEEPER = !BEEPER;
                 __delay_us(2863);
             }
         }
 	
+        void NoteG4(char Length) {
+            for((2.551/536)*Length) {
+                BEEPER = !BEEPER;
+                __delay_us(2551);
+            }
+        }
+
         // MUSIC starts here
         if(SW5 == 0)
         {
-            NoteC4(0.25);
+        NoteC4(0.25);
 	    NoteD4(0.25);
 	    NoteE4(0.5);
+        NoteG4(0.5);
+        NoteF4(0.25);
+        NoteD4(0.25);
         }
 
         // Activate bootloader if SW1 is pressed.
