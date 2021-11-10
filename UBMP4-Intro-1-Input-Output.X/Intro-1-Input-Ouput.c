@@ -54,16 +54,9 @@ int main(void)
         
         // Add code for your Program Analysis and Programming Activities here:
         
-        //function abomanation starts here
+        // FUNCTION abomanation starts here
         int NoteC4(char Length) { // Length is measured in 1/4 notes
-            for(140*Length) { // Not exact but close enough
-                BEEPER = !BEEPER;
-                __delay_us(3822);
-            }
-        }
-
-        int NoteC4(char Length) { // Length is measured in 1/4 notes
-            for(140*Length) { // Not exact but close enough
+            for((3.405/536)*Length) { // Not exact but close enough
                 BEEPER = !BEEPER;
                 __delay_us(3822);
             }
@@ -76,18 +69,26 @@ int main(void)
             }
         }
 
-        int NoteE4(char Length) { // Length is measured in 1/4 notes
-            for((3.033/536)*Length) { // Not exact but close enough
+        int NoteE4(char Length) {
+            for((3.033/536)*Length) {
                 BEEPER = !BEEPER;
                 __delay_us(3033);
             }
         }
 
-        // music starts here
+	int NoteF4(char Length) {
+            for((2.863/536)*Length) {
+                BEEPER = !BEEPER;
+                __delay_us(2863);
+            }
+        }
+	
+        // MUSIC starts here
         if(SW5 == 0)
         {
-            BEEPER = !BEEPER;
-            __delay_us(758);
+            NoteC4(0.25);
+	    NoteD4(0.25);
+	    NoteE4(0.5);
         }
 
         // Activate bootloader if SW1 is pressed.
