@@ -22,6 +22,48 @@
 
 // The main function is required, and the program begins executing from here.
 
+    // FUNCTION abomanation starts here
+        void NoteC4(char Length) { // Length is measured in 1/4 notes
+            unsigned int Loops = (3.822/536)*Length*4 // Not exact but close enough // Need to rework the math to avoid decimals
+            //round down Loops
+            for(Loops > 0; Loops--) {
+                BEEPER = !BEEPER;
+                __delay_us(3822);
+            }
+        }
+
+        void NoteD4(char Length) {
+            unsigned int Loops = (3.405/536)*Length
+            for(Loops > 0; Loops--) {
+                BEEPER = !BEEPER;
+                __delay_us(3405);
+            }
+        }
+
+        void NoteE4(char Length) {
+            unsigned int Loops = (3.033/536)*Length
+            for(Loops > 0; Loops--) {
+                BEEPER = !BEEPER;
+                __delay_us(3033);
+            }
+        }
+
+    	void NoteF4(char Length) {
+            unsigned int Loops = (2.863/536)*Length
+            for(Loops > 0; Loops--) {
+                BEEPER = !BEEPER;
+                __delay_us(2863);
+            }
+        }
+	
+        void NoteG4(char Length) {
+            unsigned int Loops = (2.551/536)*Length
+            for(Loops > 0; Loops--) {
+                BEEPER = !BEEPER;
+                __delay_us(2551);
+            }
+        }
+
 int main(void)
 {
     // Configure oscillator and I/O ports. These functions run once at start-up.
@@ -54,41 +96,7 @@ int main(void)
         
         // Add code for your Program Analysis and Programming Activities here:
         
-        // FUNCTION abomanation starts here
-        void NoteC4(char Length) { // Length is measured in 1/4 notes
-            for((3.405/536)*Length) { // Not exact but close enough
-                BEEPER = !BEEPER;
-                __delay_us(3822);
-            }
-        }
-
-        void NoteD4(char Length) {
-            for((3.405/536)*Length) {
-                BEEPER = !BEEPER;
-                __delay_us(3405);
-            }
-        }
-
-        void NoteE4(char Length) {
-            for((3.033/536)*Length) {
-                BEEPER = !BEEPER;
-                __delay_us(3033);
-            }
-        }
-
-    	void NoteF4(char Length) {
-            for((2.863/536)*Length) {
-                BEEPER = !BEEPER;
-                __delay_us(2863);
-            }
-        }
-	
-        void NoteG4(char Length) {
-            for((2.551/536)*Length) {
-                BEEPER = !BEEPER;
-                __delay_us(2551);
-            }
-        }
+        
 
         // MUSIC starts here
         if(SW5 == 0)
