@@ -26,107 +26,133 @@
     // Length is measured in 16th notes
     // Non-sharps
         void NoteF3(char Length) {
+            Length = Length-25;
             while(Length != 0) {
                 BEEPER = !BEEPER;
                 __delay_us(5727);
                 Length--;
             }
+            __delay_us(143175); // The other delay times 25
         }
 
         void NoteG3(char Length) {
+            Length = Length-25;
             while(Length != 0) {
                 BEEPER = !BEEPER;
                 __delay_us(5102);
                 Length--;
             }
+            __delay_us(127550); // The other delay times 25
         }
 
         void NoteA3(char Length) {
+            Length = Length-25;
             while(Length != 0) {
                 BEEPER = !BEEPER;
                 __delay_us(4545);
                 Length--;
             }
+            __delay_us(113625); // The other delay times 25
         }
 
         void NoteB3(char Length) {
+            Length = Length-25;
             while(Length != 0) {
                 BEEPER = !BEEPER;
                 __delay_us(4049);
                 Length--;
             }
+            __delay_us(101225); // The other delay times 25
         }
         
         void NoteC4(char Length) {
+            Length = Length-25;
             while(Length != 0) {
                 BEEPER = !BEEPER;
                 __delay_us(3822);
                 Length--;
             }
+            __delay_us(95550); // The other delay times 25
         }
 
         void NoteD4(char Length) {
+            Length = Length-25;
             while(Length != 0) {
                 BEEPER = !BEEPER;
                 __delay_us(3405);
                 Length--;
             }
+            __delay_us(85125); // The other delay times 25
         }
 
         void NoteE4(char Length) {
+            Length = Length-25;
             while(Length != 0) {
                 BEEPER = !BEEPER;
                 __delay_us(3033);
                 Length--;
             }
+            __delay_us(75825); // The other delay times 25
         }
 
     	void NoteF4(char Length) {
+            Length = Length-25;
             while(Length != 0) {
                 BEEPER = !BEEPER;
                 __delay_us(2863);
                 Length--;
             }
+            __delay_us(71700); // The other delay times 25
         }
 	
         void NoteG4(char Length) {
+            Length = Length-25;
             while(Length != 0) {
                 BEEPER = !BEEPER;
                 __delay_us(2551);
                 Length--;
             }
+            __delay_us(63775); // The other delay times 25
         }
 
         void NoteA4(char Length) {
+            Length = Length-25;
             while(Length != 0) {
                 BEEPER = !BEEPER;
                 __delay_us(2272);
                 Length--;
             }
+            __delay_us(56800); // The other delay times 25
         }
 
         void NoteB4(char Length) {
+            Length = Length-25;
             while(Length != 0) {
                 BEEPER = !BEEPER;
                 __delay_us(2024);
                 Length--;
             }
+            __delay_us(50600); // The other delay times 25
         }
 
         void NoteC5(char Length) {
+            Length = Length-25;
             while(Length != 0) {
                 BEEPER = !BEEPER;
                 __delay_us(1911);
                 Length--;
             }
+            __delay_us(47775); // The other delay times 25
         }
 
         void NoteD5(char Length) {
+            Length = Length-25;
             while(Length != 0) {
                 BEEPER = !BEEPER;
                 __delay_us(1702);
                 Length--;
             }
+            __delay_us(42550); // The other delay times 25
         }
 
     // sharps
@@ -222,21 +248,14 @@ int main(void)
 
         // Next measure
             NoteF4(100);
-            NoteG4(75); // Maybe split up the G's so it does soung like one big note?
-            __delay_us(63775);
-            NoteG4(75);
-            __delay_us(63775);
-            NoteG4(75);
-            __delay_us(63775);
+            NoteG4(100); // Maybe split up the G's so it does soung like one big note?
+            NoteG4(100);
+            NoteG4(100);
 
-            NoteG4(75);
-            __delay_us(63775);
-            NoteG4(75);
-            __delay_us(63775);
-            NoteG4(75);
-            __delay_us(63775);
-            NoteG4(75);
-            __delay_us(63775);
+            NoteG4(100);
+            NoteG4(100);
+            NoteG4(100);
+            NoteG4(100);
 
             NoteG4(200);
             NoteD5(200);
@@ -253,8 +272,7 @@ int main(void)
             NoteC5(200);
             NoteB4(200);
 
-            NoteG4(375);
-            __delay_us(63775);
+            NoteG4(400);
 
             NoteG4(100);
             NoteA4(100);
@@ -262,21 +280,14 @@ int main(void)
 
         // Next measure
             NoteF4(100);
-            NoteG4(75);
-            __delay_us(63775);
-            NoteG4(75);
-            __delay_us(63775);
-            NoteG4(75);
-            __delay_us(63775);
+            NoteG4(100);
+            NoteG4(100);
+            NoteG4(100);
 
-            NoteG4(75);
-            __delay_us(63775);
-            NoteG4(75);
-            __delay_us(63775);
-            NoteG4(75);
-            __delay_us(63775);
-            NoteG4(75);
-            __delay_us(63775);
+            NoteG4(100);
+            NoteG4(100);
+            NoteG4(100);
+            NoteG4(100);
 
             NoteG4(200);
             NoteD5(200);
