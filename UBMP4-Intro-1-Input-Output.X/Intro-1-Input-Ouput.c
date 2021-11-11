@@ -22,47 +22,114 @@
 
 // The main function is required, and the program begins executing from here.
 
-    // FUNCTION abomanation starts here
-        void NoteC4(char Length) { // Length is measured in 16th notes
-            unsigned int Loops = ((3822/536000)*(Length*4000))/1000 // Not exact but close enough // Need to rework the math to avoid decimals
-            //round down Loops
-            for(Loops > 0; Loops--) {
+// FUNCTION abomanation starts here
+    // Length is measured in 16th notes
+    // Non-sharps
+        void NoteF3(char Length) {
+            while(Length != 0) {
+                BEEPER = !BEEPER;
+                __delay_us(5727);
+                Length--;
+            }
+        }
+
+        void NoteG3(char Length) {
+            while(Length != 0) {
+                BEEPER = !BEEPER;
+                __delay_us(5102);
+                Length--;
+            }
+        }
+
+        void NoteA3(char Length) {
+            while(Length != 0) {
+                BEEPER = !BEEPER;
+                __delay_us(4545);
+                Length--;
+            }
+        }
+
+        void NoteB3(char Length) {
+            while(Length != 0) {
+                BEEPER = !BEEPER;
+                __delay_us(4049);
+                Length--;
+            }
+        }
+        
+        void NoteC4(char Length) {
+            while(Length != 0) {
                 BEEPER = !BEEPER;
                 __delay_us(3822);
+                Length--;
             }
         }
 
         void NoteD4(char Length) {
-            unsigned int Loops = (3.405/536)*Length
-            for(Loops > 0; Loops--) {
+            while(Length != 0) {
                 BEEPER = !BEEPER;
                 __delay_us(3405);
+                Length--;
             }
         }
 
         void NoteE4(char Length) {
-            unsigned int Loops = (3.033/536)*Length
-            for(Loops > 0; Loops--) {
+            while(Length != 0) {
                 BEEPER = !BEEPER;
                 __delay_us(3033);
+                Length--;
             }
         }
 
     	void NoteF4(char Length) {
-            unsigned int Loops = (2.863/536)*Length
-            for(Loops > 0; Loops--) {
+            while(Length != 0) {
                 BEEPER = !BEEPER;
                 __delay_us(2863);
+                Length--;
             }
         }
 	
         void NoteG4(char Length) {
-            unsigned int Loops = (2.551/536)*Length
-            for(Loops > 0; Loops--) {
+            while(Length != 0) {
                 BEEPER = !BEEPER;
                 __delay_us(2551);
+                Length--;
             }
         }
+
+        void NoteA4(char Length) {
+            while(Length != 0) {
+                BEEPER = !BEEPER;
+                __delay_us(2272);
+                Length--;
+            }
+        }
+
+        void NoteB4(char Length) {
+            while(Length != 0) {
+                BEEPER = !BEEPER;
+                __delay_us(2024);
+                Length--;
+            }
+        }
+
+        void NoteC5(char Length) {
+            while(Length != 0) {
+                BEEPER = !BEEPER;
+                __delay_us(1911);
+                Length--;
+            }
+        }
+
+        void NoteD5(char Length) {
+            while(Length != 0) {
+                BEEPER = !BEEPER;
+                __delay_us(1702);
+                Length--;
+            }
+        }
+
+    // sharps
 
 int main(void)
 {
@@ -101,12 +168,121 @@ int main(void)
         // MUSIC starts here
         if(SW5 == 0)
         {
-        NoteC4(1);
-	    NoteD4(1);
-	    NoteE4(2);
-        NoteG4(2);
-        NoteF4(1);
-        NoteD4(1);
+        // First measure
+            NoteC4(100);
+	        NoteD4(100);
+	        NoteE4(200);
+
+            NoteG4(200);
+            NoteF4(100);
+            NoteD4(100);
+
+            NoteE4(100);
+            NoteG4(100);
+            NoteA4(200);
+
+            NoteG4(400);
+
+        // Next measure
+            NoteC4(100);
+	        NoteD4(100);
+	        NoteE4(200);
+
+            NoteG4(200);
+            NoteE4(100);
+            NoteC4(100);
+
+            NoteE4(100);
+            NoteC4(100);
+            NoteD4(200);
+
+            NoteC4(400);
+
+        // Next measure
+            NoteB3(200);
+            NoteC4(100);
+            NoteG4(200); // This note is a tie
+            NoteC4(100);
+            NoteB3(100);
+
+            NoteA3(200);
+            NoteC4(100);
+            NoteG4(200); // This note is a tie
+            NoteC4(100);
+            NoteA3(100);
+
+        // Next measure
+            NoteG3(200);
+            NoteC4(100);
+            NoteG4(200); // This note is a tie
+            NoteC4(100);
+            NoteG3(100);
+
+            NoteC4(800);
+
+        // Next measure
+            NoteF4(100);
+            NoteG4(75); // Maybe split up the G's so it does soung like one big note?
+            __delay_us(63775);
+            NoteG4(75);
+            __delay_us(63775);
+            NoteG4(75);
+            __delay_us(63775);
+
+            NoteG4(75);
+            __delay_us(63775);
+            NoteG4(75);
+            __delay_us(63775);
+            NoteG4(75);
+            __delay_us(63775);
+            NoteG4(75);
+            __delay_us(63775);
+
+            NoteG4(200);
+            NoteD5(200);
+            NoteC5(200);
+            NoteA4(200);
+
+        // Next measure
+            NoteF3(200);
+
+            NoteG3(200);
+            NoteG4(100);
+            NoteA4(100);
+
+            NoteC5(200);
+            NoteB4(200);
+
+            NoteG4(375);
+            __delay_us(63775);
+
+            NoteG4(100);
+            NoteA4(100);
+            NoteC5(200);
+
+        // Next measure
+            NoteF4(100);
+            NoteG4(75);
+            __delay_us(63775);
+            NoteG4(75);
+            __delay_us(63775);
+            NoteG4(75);
+            __delay_us(63775);
+
+            NoteG4(75);
+            __delay_us(63775);
+            NoteG4(75);
+            __delay_us(63775);
+            NoteG4(75);
+            __delay_us(63775);
+            NoteG4(75);
+            __delay_us(63775);
+
+            NoteG4(200);
+            NoteD5(200);
+            NoteC5(200);
+            NoteA4(200);
+
         }
 
         // Activate bootloader if SW1 is pressed.
