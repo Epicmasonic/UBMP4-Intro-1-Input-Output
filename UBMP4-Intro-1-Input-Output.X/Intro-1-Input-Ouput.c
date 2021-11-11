@@ -44,7 +44,7 @@
             }
             if (Slur == 0) {
 		while(SlurPitch != 0) {
-                	__delay_us(1) // The other delay times 25
+                	__delay_us(1); // The other delay times 25
 			SlurPitch--;
 	    	}
             }
@@ -257,6 +257,8 @@ int main(void)
             __delay_ms(100);
             LED6 = 1;
             __delay_ms(100);
+            LED1 = 0;
+            __delay_ms(100);
             LED3 = 0;
             __delay_ms(100);
             LED4 = 0;
@@ -264,6 +266,8 @@ int main(void)
             LED5 = 0;
             __delay_ms(100);
             LED6 = 0;
+            __delay_ms(100);
+            LED1 = 1;
             __delay_ms(100);
         }
         
@@ -407,11 +411,33 @@ int main(void)
             NoteE5(200, 1);
             
             NoteC5(300, 1);
-            //More slurs here
+
+            SharpNoteD5(200, 0);
+            NoteCustom(1803, 200, 0);
+            NoteD5(200, 1);
+
             NoteC5(100, 1);
 
             NoteA4(100, 1);
             NoteC5(100, 1);
+
+        // Measure 14
+            Rest(200);
+
+            SharpNoteD5(200, 0);
+            NoteE5(200, 1);
+
+            Rest(200);
+
+            NoteA4(200, 0);
+            NoteC5(300, 0);
+            NoteE5(50, 0);
+            NoteC5(50,0);
+            NoteA4(200, 1);
+
+            Rest(200);
+
+        // Measure 15
         }
 
         // Activate bootloader if SW1 is pressed.
