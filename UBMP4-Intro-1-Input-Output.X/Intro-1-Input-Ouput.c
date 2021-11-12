@@ -445,13 +445,13 @@ int main(void)
  *    Next, press and hold SW3 while pressing and releasing SW4. Does it work
  *    as expected?
  * 
- #		!
+ #		Yes
  *
  *    Next, try press and holding SW4 while pressing and releasing SW3. Does it
  *    work as expected? Explain the difference in operation between the 'if' and
  *    'while' structures making up the momentary button code.
  * 
- #		!
+ #		LED4 doesn't turn on because the code gets stuck in the while loop
  *
  * 7. Let's explore logical conditions using 'if' statements. Replace the code
  *    added in 6, above, with this nested if code to make a logical AND
@@ -477,7 +477,7 @@ int main(void)
  *    Test the code to ensure it works as expected. Does the order of the if
  *    conditions matter? (eg. swap the conditional checks for SW3 and SW4)
  * 
- #		!
+ #		The order does not matter
  *
  * 8. Next, replace the code from 7 with the following code which implements a
  *    logical AND conditional operator composed of two ampersands '&&':
@@ -496,7 +496,7 @@ int main(void)
  *    at least one advantage of using a logical conditional operator instead of
  *    nested if structures?
  * 
- #		!
+ #		Yes and this way you can use less code
  *
  * 9. Replace the double ampersand '&&' with double vertical bars '||)' to make
  *    a logical OR conditional operator. Your code should look like this:
@@ -513,7 +513,7 @@ int main(void)
 	
  *    Describe the conditions under which LED4 turns on.
  * 
- #		!
+ #		LED4 turns on if SW3 is pressed, SW4 is pressed or if Both are pressed,
  *
  * 
  * Programming Activities
@@ -525,7 +525,7 @@ int main(void)
  *    before MPLAB-X produces an error message? (Hint: can you think of a fast
  *    and efficient way of guessing an unknown number?)
  * 
- #		!
+ #		4205 is the bigist number because at 4206 it breaks
  *
  * 2. The '__delay_ms();' function only accepts integers as delay values. To
  *    make delays shorter than 1ms, specify a delay in microseconds using the
@@ -546,7 +546,7 @@ int main(void)
  *    Does the pitch of the tone increase or decrease if the delay value is
  *    made smaller?
  * 
- #		!
+ #		pitch increases when the period gets smaller
  *
  * 3. This code demonstrates a more compact way of toggling the beeper output
  *    using a logical NOT operator '!'. Replace the code above, with this code:
@@ -564,7 +564,8 @@ int main(void)
  *    code, can you think of one or more disadvantages based on its output when
  *    the button is released?
  * 
- #		!
+ #		The beeper will be what ever it wasn't before (0 to 1, 1 to 0)
+ #		One problum you may have it you can't garnty what the buzzer will be after this code runs
  *
  * 4. Using modified versions of the original SW2 'if' structure, create a
  *    program that makes a unique LED flashing pattern for each pushbutton.
@@ -573,7 +574,10 @@ int main(void)
  *    one button is held. Do all of the patterns try to flash the LEDs at the
  *    same time, or sequentially? Explain why this is.
  * 
- #		!
+ #		// I don't want to code this because the music code is sacred
+ *
+ #		If all buttons are pressed then al the patterns will play sequentially from top to bottom (in the code)
+ #		because all the if statments are true so there's nothing to contain the code
  *
  * 5. Create a program that makes a different tone for each pushbutton.
  * 
@@ -581,22 +585,34 @@ int main(void)
  *    more buttons at the same time. Describe what the tone waveform would look
  *    like when more than one button is held.
  * 
- #		!
+ #		// I don't want to code this because the music code is sacred
+ *
+ #		The wave would look like: A high lasting [delay A], A low lasting [delay A], A high lasting [delay B], A low lasting [delay B]
  *
  * 6. Use individual 'if' structures to simulate 'Start' and 'Stop' buttons for
  *    an industrial machine. LED D4 should turn on when SW3 is pressed, stay on
  *    even after SW3 is released, and turn off when SW4 is pressed. Test your
  *    program to make sure it works.
  * 
- #		!
+ #		if(SW3 == 0)
+ #		{
+ #		    LED4 = 1;
+ #		}
+ #		else if(SW4 == 0)
+ #       	{
+ #           	    LED4 = 0;
+ #       	}
  *
  * 7. Running your program from 6, above, describe what happens when both SW3
  *    and SW4 are pressed. Does LED D4 stay on? If so, how does the brightness
  *    of LED D4 compare between its normal on state following SW3 being pressed
- *    to this new state when both SW3 and SW4 are bing held? Can you explain
+ *    to this new state when both SW3 and SW4 are being held? Can you explain
  *    why it changes?
  * 
- #		!
+ #		When both buttions are pressed LED4 stays on because I used else if.
+ *
+ #		// If I didn't use else if then LED4 would be on at half brightness because the average of 0 and 1 is 0.5
+ #		// (The light is turning on and off real fast that your brian gets confused and has to average is out)
  *
  * 8. As you can imagine, an industrial machine that is able to turn on even
  *    while its 'Stop' button is pressed represents a significant safety hazard.
@@ -604,7 +620,14 @@ int main(void)
  *    activity 5 to make it safer. SW3 should only turn on LED D4 if SW4 is
  *    released.
  * 
- #		!
+ #		if(SW4 == 0) // Just had to swich the buttons lol
+ #		{
+ #		    LED4 = 1;
+ #		}
+ #		else if(SW3 == 0)
+ #       	{
+ #           	    LED4 = 0;
+ #       	}
  *
  * 9. LED D1 is normally used to indicate that a program is running, but it can
  *    be controlled by your program as well. If you take a look at the UBMP4
@@ -613,6 +636,6 @@ int main(void)
  *    with the other LEDs. This means that you need to make D1's output a zero
  *    to turn D1 on. Try it! Make a program that controls or flashes LED D1.
  *
- #		!
+ #		// I already did that :)
  *
  */
