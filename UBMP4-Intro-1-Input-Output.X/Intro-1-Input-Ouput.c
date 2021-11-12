@@ -402,6 +402,7 @@ int main(void)
  * 5. The following program code includes instructions that write to the PORTC
  *    output latches directly. Try it by copying and pasting this code below
  *    the existing SW2 'if' structure, at the location shown by the comment.
+ 
         if(SW3 == 0)
         {
             LATC = 0b00000000;
@@ -409,6 +410,7 @@ int main(void)
             LATC = 0b11110000;
             __delay_ms(100);
         }
+	
  *    What happens when pushbutton SW3 is pressed? Identify at least one
  *    advantage and one disadvantage of controlling the LEDs using 'LATC' writes
  *    rather than through individual 'LEDn = x;' statements.
@@ -420,6 +422,7 @@ int main(void)
  *
  * 6. Next, compare the operation of 'if' and 'while' structures to simulate
  *    momentary buttons. Replace the code you added in 5, above, with this code:
+ 
         // Momentary button using if structure
         if(SW3 == 0)
         {
@@ -429,12 +432,14 @@ int main(void)
         {
             LED4 = 0;
         }
+	
         // Momentary button using while structure
         while(SW4 == 0)
         {
             LED5 = 1;
         }
         LED5 = 0;
+	
  *    First, try pressing and releasing SW3 and SW4 one at a time.
  * 
  *    Next, press and hold SW3 while pressing and releasing SW4. Does it work
@@ -451,6 +456,7 @@ int main(void)
  * 7. Let's explore logical conditions using 'if' statements. Replace the code
  *    added in 6, above, with this nested if code to make a logical AND
  *    condition that will light LED D4 only if both SW3 and SW4 are pressed:
+ 
         // Nested if 'AND' code
         if(SW3 == 0)
         {
@@ -467,6 +473,7 @@ int main(void)
         {
             LED4 = 0;
         }
+	
  *    Test the code to ensure it works as expected. Does the order of the if
  *    conditions matter? (eg. swap the conditional checks for SW3 and SW4)
  * 
@@ -484,6 +491,7 @@ int main(void)
         {
             LED4 = 0;
         }
+	
  *    Does '&&' work the same way as the nested if structures? Can you think of
  *    at least one advantage of using a logical conditional operator instead of
  *    nested if structures?
@@ -502,6 +510,7 @@ int main(void)
         {
             LED4 = 0;
         }
+	
  *    Describe the conditions under which LED4 turns on.
  * 
  #		!
@@ -532,6 +541,7 @@ int main(void)
             BEEPER = 0;
             __delay_us(567);
         }
+	
  *    Try changing the delay values in both of the __delay_us(); functions.
  *    Does the pitch of the tone increase or decrease if the delay value is
  *    made smaller?
@@ -547,6 +557,7 @@ int main(void)
             BEEPER = !BEEPER;
             __delay_us(567);
         }
+	
  *    One difference between this code and the code in 2, above, is the state
  *    of the BEEPER pin when SW5 is released. What state will the BEEPER output
  *    be in after this code runs? While one advantage of this method is smaller
