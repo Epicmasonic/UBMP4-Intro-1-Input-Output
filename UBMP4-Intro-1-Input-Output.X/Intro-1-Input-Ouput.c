@@ -421,7 +421,7 @@ int main(void)
  #		One disadvantage is that you may overwrite values you didn't mean to because LATC doesn't care what it was before
  *
  * 6. Next, compare the operation of 'if' and 'while' structures to simulate
- *    momentary buttons. Replace the code you added in 5, above, with this code:
+ *    momentary buttons. Replace the code you added in 5, above, with this code: */
  
         // Momentary button using if structure
         if(SW3 == 0)
@@ -438,7 +438,7 @@ int main(void)
         {
             LED5 = 1;
         }
-        LED5 = 0;
+        LED5 = 0; /*
 	
  *    First, try pressing and releasing SW3 and SW4 one at a time.
  * 
